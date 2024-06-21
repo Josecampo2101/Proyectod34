@@ -26,13 +26,13 @@ const toggleButton = document.getElementById('toggleButton');
 const sidebar = document.querySelector('.sidebar');
 const sidebarItems = document.querySelectorAll('.sidebar nav ul li');
 
-let sidebarCollapsed = true; // Variable para mantener el estado de la barra lateral
+let sidebarCollapsed = true; 
 
 toggleButton.addEventListener('click', function() {
     sidebar.classList.toggle('collapsed');
     sidebarCollapsed = !sidebarCollapsed;
 
-    // Función para manejar la visibilidad de los submenús
+
     function handleSubMenuVisibility(item, submenu) {
         const link = item.querySelector('a');
         link.addEventListener('mouseenter', function() {
@@ -48,7 +48,7 @@ toggleButton.addEventListener('click', function() {
         });
     }
 
-    // Mostrar u ocultar submenús y texto de los menús principales
+
     sidebarItems.forEach(item => {
         const submenu = item.querySelector('ul.submenu');
         if (submenu) {
@@ -72,7 +72,7 @@ toggleButton.addEventListener('click', function() {
     });
 });
 
-// Media query para dispositivos móviles
+
 const mediaQuery = window.matchMedia('(max-width: 768px)');
 
 function handleMobileLayout(mediaQuery) {

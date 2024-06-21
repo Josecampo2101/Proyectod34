@@ -1,11 +1,6 @@
-/* Reset de estilos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* Estilo para body y html */
+
+
 body, html {
     background-color: #FFFFFF;
     font-family: Arial, sans-serif;
@@ -16,7 +11,7 @@ body, html {
     position: relative;
 }
 
-/* Estilo para el header */
+
 header {
     background-color: #00338D;
     color: #FFFFFF;
@@ -44,7 +39,7 @@ header img.logo {
     height: auto;
 }
 
-/* Estilo para el botón de cerrar sesión */
+
 #logout-button {
     background-color: rgb(240, 171, 0);
     color: #FFFFFF;
@@ -59,7 +54,7 @@ header img.logo {
     background-color: #009FDA;
 }
 
-/* Estilo para la barra lateral */
+
 .sidebar {
     background-color: #cee4ff;
     width: 240px;
@@ -149,7 +144,7 @@ header img.logo {
     background-color: #444444;
 }
 
-/* Estilo para el contenido central */
+
 .center-content {
     display: flex;
     flex-direction: column;
@@ -161,7 +156,7 @@ header img.logo {
     width: calc(100% - 240px);
 }
 
-/* Estilo para el texto dinámico */
+
 .static-text,
 .changing-text {
     font-family: 'Myriad Pro', sans-serif;
@@ -199,7 +194,7 @@ header img.logo {
     }
 }
 
-/* Estilo para el footer */
+
 footer {
     background-color: #333;
     color: #fff;
@@ -212,7 +207,7 @@ footer {
     z-index: 2;
 }
 
-/* Estilo responsivo para pantallas pequeñas */
+
 @media screen and (max-width: 768px) {
     .sidebar {
         width: 100%;
