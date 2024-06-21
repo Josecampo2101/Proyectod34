@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú principal</title>
+    <link rel="stylesheet" href="pagina2.css">
+</head>
+<body>
+    <header>
+        <div class="Superior">
+            <img src="./LOGO_IPUC_INVERTIDO_SIN_FONDO_2013.png" alt="Logo IPUC" class="logo">
+            <p>Bienvenido pastor "------"</p>
+        </div>
+        <button id="logout-button">Cerrar sesión</button>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button id="toggleButton"><img src="./icons8-menú-30.png" alt="boton"></button>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#"><img src="./icons8-casa-24.png" alt="Inicio"><span>Inicio</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./icons8-archivo-24.png" alt="Solicitud"><span>Solicitudes</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Nueva Solicitud</a></li>
+                        <li><a href="#">Ver Solicitudes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img src="./icons8-comunidad-24.png" alt="Acompañamiento"><span>Acompañamiento</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Nueva Solicitud</a></li>
+                        <li><a href="#">Ver Solicitudes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img src="./icons8-portafolio-24.png" alt="Portafolios"><span>Portafolios</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Ver Portafolios</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img src="./icons8-teléfono-desconectado-24.png" alt="Contactos"><span>Contactos</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="center-content">
+        <div id="staticText" class="static-text">Un Distrito que permanece en&nbsp;</div>
+        <div id="changingText" class="changing-text"></div>
+    </div>
+
+    <footer>
+        <p>©IPUC Distrito 34</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

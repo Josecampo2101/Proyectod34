@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Sitio Web con CSS</title>
+    <link rel="stylesheet" href="./pagina2.css">
+    <style>
+        /* Aquí puedes incluir estilos adicionales si es necesario */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="Superior">
+            <img src="./LOGO_IPUC_INVERTIDO_SIN_FONDO_2013.png" alt="Logo IPUC" class="logo">
+            <p>Bienvenido pastor "------"</p>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <button id="menu-indicator" onclick="toggleSidebar()">
+            <img src="./icons8-menú-50.png" alt="Menu Button" class="menu-icon">
+        </button>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#"><img class="img-inicio" src="./icons8-casa-24.png" alt="Inicio">Inicio</a>
+                </li>
+                <li>
+                    <a href="#"><img class="img-solicitudes" src="./icons8-archivo-24.png" alt="Solicitud">Solicitudes</a>
+                    <ul class="submenu">
+                        <li><a href="#">Nueva Solicitud</a></li>
+                        <li><a href="#">Ver Solicitudes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img class="img-acompañamiento" src="./icons8-comunidad-24.png" alt="Acompañamiento">Acompañamiento</a>
+                    <ul class="submenu">
+                        <li><a href="#">Nueva Solicitud</a></li>
+                        <li><a href="#">Ver Solicitudes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img class="img-portafolios" src="./icons8-portafolio-24.png" alt="Portafolios">Portafolios</a>
+                    <ul class="submenu">
+                        <li><a href="#">Ver Portafolios</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img class="img-contactos" src="./icons8-teléfono-desconectado-24.png" alt="Contactos">Contactos</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="center-content">
+        <div id="staticText" class="static-text">Una Iglesia que permanece en&nbsp;</div>
+        <div id="changingText" class="changing-text"></div>
+    </div>
+
+    <footer>
+        <p>©IPUC Distrito 34</p>
+    </footer>
+
+    <script>
+        // Función para alternar la visibilidad de la barra lateral
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('show');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const changingTextElement = document.getElementById('changingText');
+            const words = ['Amor', 'Verdad', 'Justicia', 'Unidad', 'Autoridad', 'Libertad', 'Santidad'];
+            let currentIndex = 0;
+
+            function changeText() {
+                const currentWord = words[currentIndex];
+                changingTextElement.innerHTML = '';
+
+                for (let i = 0; i < currentWord.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = currentWord[i];
+                    span.classList.add('letter');
+                    span.style.animationDelay = `${i * 0.1}s`;
+                    changingTextElement.appendChild(span);
+                }
+
+                currentIndex = (currentIndex + 1) % words.length;
+            }
+
+            changeText();
+            setInterval(changeText, 3000);
+        });
+    </script>
+</body>
+</html>

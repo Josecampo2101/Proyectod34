@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to bottom, #00000f, #00000f); 
+}
+
+.columna {
+    padding: 20px;
+    border: none;
+}
+
+.columna-a {
+    width: 25%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.columna-b {
+    flex-grow: 1; 
+    background-image: url("./LOGO_IPUC_INVERTIDO_SIN_FONDO_2013.png"); 
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    background-position: 700px; 
+    opacity: 15%; 
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Myriad Pro', Arial, sans-serif;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    font-family: 'Myriad Pro Italic', Arial, sans-serif; 
+    font-style: italic; 
+}
+
+.ingresar-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(240, 171, 0); 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+input[type="text"], input[type="password"] {
+    width: 80%; 
+    padding: 15px; 
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333; 
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+input[type="text"]::placeholder, input[type="password"]::placeholder {
+    color: rgba(102, 102, 102, 0.7); 
+    padding-left: 5px; 
+}
+
+input[type="text"]:hover, input[type="password"]:hover {
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ingresar-btn:hover {
+    background-color: rgb(0, 51, 141);
+}
+
+@media screen and (max-width: 768px) {
+    .columna-a {
+        width: 100%; 
+    }
+
+    .columna-b {
+        display: none; 
+    }
+}
+
+@keyframes blue-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.6), 0 0 30px rgba(0, 123, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.4);
+    }
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    animation: blue-glow 1.5s infinite alternate;
+    outline: none; /* Removes the default focus outline */
+}
+
