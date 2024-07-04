@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const changingTextElement = document.getElementById('changingText');
     const words = ['Amor', 'Verdad', 'Justicia', 'Unidad', 'Autoridad', 'Libertad', 'Santidad'];
     let currentIndex = 0;
@@ -20,69 +20,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
     changeText();
     setInterval(changeText, 3000);
-});
 
-const toggleButton = document.getElementById('toggleButton');
-const sidebar = document.querySelector('.sidebar');
-const sidebarItems = document.querySelectorAll('.sidebar nav ul li');
+    const sidebar = document.querySelector('.sidebar');
+    const menuIndicator = document.getElementById('menu-indicator');
+    const hasSubmenus = document.querySelectorAll('.has-submenu');
+    const centerContent = document.querySelector('.center-content');
 
-let sidebarCollapsed = false; // Variable para mantener el estado de la barra lateral
+    function showSubmenusOnHover() {
+        hasSubmenus.forEach(item => {
+            item.addEventListener('mouseover', function() {
+                if (!sidebar.classList.contains('collapsed')) {
+                    const submenu = item.querySelector('.submenu');
+                    if (submenu) {
+                        item.classList.add('show');
+                    }
+                }
+            });
 
-toggleButton.addEventListener('click', function() {
-    sidebar.classList.toggle('collapsed');
-    sidebarCollapsed = !sidebarCollapsed;
-
-    // Función para manejar la visibilidad de los submenús
-    function handleSubMenuVisibility(item, submenu) {
-        const link = item.querySelector('a');
-        link.addEventListener('mouseenter', function() {
-            if (!sidebarCollapsed) {
-                submenu.style.display = 'block';
-            }
-        });
-
-        link.addEventListener('mouseleave', function() {
-            if (!sidebarCollapsed) {
-                submenu.style.display = 'none';
-            }
+            item.addEventListener('mouseout', function() {
+                if (!sidebar.classList.contains('collapsed')) {
+                    item.classList.remove('show');
+                }
+            });
         });
     }
 
-    // Mostrar u ocultar submenús y texto de los menús principales
-    sidebarItems.forEach(item => {
-        const submenu = item.querySelector('ul.submenu');
-        if (submenu) {
-            if (sidebarCollapsed) {
-                submenu.style.display = 'none';
-            } else {
-                handleSubMenuVisibility(item, submenu);
-            }
-        }
+    function toggleSidebar() {
+        const isCollapsed = sidebar.classList.toggle('collapsed');
+        centerContent.classList.toggle('collapsed');
 
-        const link = item.querySelector('a');
-        if (sidebarCollapsed) {
-            if (link.querySelector('span')) {
-                link.querySelector('span').style.display = 'none';
-            }
+        if (isCollapsed) {
+
+            hasSubmenus.forEach(item => {
+                item.classList.remove('show');
+            });
         } else {
-            if (link.querySelector('span')) {
-                link.querySelector('span').style.display = 'inline';
-            }
+            showSubmenusOnHover();
         }
+    }
+
+    menuIndicator.addEventListener('click', toggleSidebar);
+
+    const logoutButton = document.getElementById('logout-button');
+    logoutButton.addEventListener('click', function() {
+        // Aquí puedes agregar la funcionalidad de cierre de sesión
+        alert('Cerrar Sesión');
     });
-});
 
-// Inicialmente, colapsar la barra lateral
-sidebar.classList.add('collapsed');
-sidebarCollapsed = true;
-sidebarItems.forEach(item => {
-    const submenu = item.querySelector('ul.submenu');
-    if (submenu) {
-        submenu.style.display = 'none';
-    }
 
-    const link = item.querySelector('a');
-    if (link.querySelector('span')) {
-        link.querySelector('span').style.display = 'none';
-    }
+    showSubmenusOnHover();
 });

@@ -1,14 +1,13 @@
-
+/* Estilos generales */
 body, html {
     background-color: #FFFFFF;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
 }
-
 
 header {
     background-color: #00338D;
@@ -20,11 +19,10 @@ header {
     font-style: italic;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Asegura que los elementos se distribuyan entre los extremos */
     width: 100%;
     box-sizing: border-box;
-    position: relative;
-    z-index: 2; 
+    z-index: 2;
 }
 
 header .Superior {
@@ -38,22 +36,133 @@ header img.logo {
     height: auto;
 }
 
+header .logout-container {
+    margin-left: auto; /* Empuja el botón de cerrar sesión a la derecha */
+}
 
-#menu-indicator {
-    width: 30px;
-    height: 30px;
+#logout-button {
+    background-color: rgb(240, 171, 0);
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#logout-button:hover {
+    background-color: #009FDA;
+}
+
+.sidebar {
+    background-color: #cee4ff;
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-weight: bold;
+    overflow-y: auto;
+    padding-top: 60px;
+    transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
     background-color: transparent;
     border: none;
-    cursor: pointer; 
-    margin-bottom: 20px;
+    cursor: pointer;
 }
 
+.sidebar button img {
+    width: 30px;
+    height: auto;
+}
 
-.menu-icon {
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+    position: relative;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.sidebar nav ul li a img {
+    margin-right: 10px;
+}
+
+.sidebar nav ul li a span {
+    display: inline;
+    transition: display 0.3s ease;
+}
+
+.sidebar.collapsed nav ul li a span,
+.sidebar nav ul li.collapsed a span {
+    display: none; /* Asegura que el texto junto a las imágenes se oculte cuando la barra está colapsada */
+}
+
+.sidebar nav ul li ul.submenu {
+    display: none;
+    background-color: rgb(0, 159, 218);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
     width: 100%;
-    height: 100%;
 }
 
+.sidebar nav ul li.show ul.submenu {
+    display: block;
+}
+
+.sidebar nav ul li ul.submenu li {
+    margin: 0;
+}
+
+.sidebar nav ul li ul.submenu li a {
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+.sidebar nav ul li ul.submenu li a:hover {
+    background-color: #444444;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    margin-left: 240px;
+    width: calc(100% - 240px);
+}
+
+.center-content.collapsed {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+}
 
 .static-text,
 .changing-text {
@@ -62,6 +171,8 @@ header img.logo {
     font-size: 36px;
     text-align: center;
     white-space: nowrap;
+    transition: opacity 0.3s ease;
+    opacity: 1;
 }
 
 .static-text {
@@ -90,128 +201,14 @@ header img.logo {
     }
 }
 
-@media (max-width: 600px) {
-    .static-text,
-    .changing-text {
-        font-size: 18px;
-    }
-}
-
-.img-inicio {
-    margin-right: 6px;
-    width: 20px;
-    height: auto;
-}
-
-.img-solicitudes,
-.img-acompañamiento,
-.img-portafolios,
-.img-contactos {
-    margin-right: 6px;
-    width: 20px;
-    height: 20px;
-}
-
-
-#logout-button {
-    background-color: RGB(240,171,0);
-    color: #FFFFFF;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-#logout-button:hover {
-    background-color: #009FDA;
-}
-
-/* Barra lateral */
-.sidebar {
-    background-color: #cee4ff;
-    width: 10%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    font-weight: bold;
-    overflow-y: auto;
-    padding-top: 60px;
-    transition: transform 0.3s ease; 
-    transform: translateX(0); }
-
-.sidebar.show {
-    transform: translateX(-100%); 
-}
-
-.sidebar nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar nav ul li {
-    margin: 10px 0;
-    position: relative;
-}
-
-.sidebar nav ul li a {
-    text-decoration: none;
-    color: #000;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-
-.sidebar nav ul li ul.submenu {
-    display: none;
-    background-color: RGB(0,159,218);
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    width: 100%;
-}
-
-.sidebar nav ul li:hover ul.submenu {
-    display: block;
-}
-
-.sidebar nav ul li ul.submenu li {
-    margin: 0;
-}
-
-.sidebar nav ul li ul.submenu li a {
-    color: #FFFFFF;
-    padding: 10px;
-}
-
-.sidebar nav ul li ul.submenu li a:hover {
-    background-color: #444444;
-}
-
-
-.center-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    padding: 10px;
-}
-
-
 footer {
-    background-color: #00338D;
-    color: #FFFFFF;
+    background-color: #333;
+    color: #fff;
     padding: 10px;
     text-align: center;
-    font-size: 12px;
     width: 100%;
     box-sizing: border-box;
-    font-family: 'Myriad Pro', Arial, sans-serif;
+    margin-top: auto;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
 }
