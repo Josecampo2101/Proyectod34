@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Solicitud</title>
+    <title>Formulario</title>
     <link rel="stylesheet" href="Nueva-solicitud.css">
 </head>
 <body>
     <header>
         <div class="Superior">
             <img src="./LOGO_IPUC_INVERTIDO_SIN_FONDO_2013.png" alt="Logo IPUC" class="logo">
-            <p>Bienvenido pastor "------"</p>
+            <span>Bienvenido pastor "-----"</span>
         </div>
         <div class="logout-container">
             <button id="logout-button">Cerrar Sesión</button>
         </div>
     </header>
-    <!-- <div class="sidebar">
-        <button id="menu-indicator" onclick="toggleSidebar()">
+
+    <div class="sidebar">
+        <button id="menu-indicator">
             <img src="./icons8-menú-50.png" alt="Menu Button">
         </button>
         <nav>
@@ -50,42 +51,47 @@
                 </li>
             </ul>
         </nav>
-    </div> -->
+    </div>
 
+    <div class="center-content">
         <div class="Container">
-                <div class="form first">
-                    <div class="Registro">
-                        <span class="yitle"> Registro </span>
-
-                        <div class="field">
-                            <div class="input-field">
-                                <label> Nombre Completo</label>
-                                <input type="text" placeholder="Ingrese su nombre" required>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="input-field">
-                                <label>Fecha</label>
-                                <input type="date" placeholder="Ingrese su nombre" required>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="input-field">
-                                <label> Email</label>
-                                <input type="text" placeholder="Ingrese su correo" required>
-                            </div>
-                        </div>    
-
+            <form>
+                <div class="Registro">
+                    <div class="title">Nueva solicitud</div>
+                    <div class="field">
+                        <input type="text" id="congregacion" name="congregacion" placeholder=" " required>
+                        <label for="congregacion">Congregación</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="nombre-completo" name="nombre-completo" placeholder=" " required>
+                        <label for="nombre-completo">Nombre Completo</label>
+                    </div>
+                    <div class="field">
+                        <input type="tel" id="telefono" name="telefono" placeholder=" " required>
+                        <label for="telefono">Teléfono</label>
+                    </div>
+                    <div class="field">
+                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="field select-field">
+                        <select id="tipo-ayuda" name="tipo-ayuda" required>
+                            <option value="" disabled selected></option>
+                            <option value="tipo1">Tipo 1</option>
+                            <option value="tipo2">Tipo 2</option>
+                            <option value="tipo3">Tipo 3</option>
+                        </select>
+                        <label for="tipo-ayuda">Seleccione tipo de ayuda</label>
                     </div>
                 </div>
+            </form>
         </div>
-    
-    
+    </div>
 
     <footer>
-        <p>©IPUC Distrito 34</p>
+        ©IPUC Distrito 34
     </footer>
 
+    <script src="Solicitud.js"></script>
 </body>
-<script src="/Solicitud.js">  </script>
 </html>

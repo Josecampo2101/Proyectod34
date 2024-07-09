@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    
     const sidebar = document.querySelector('.sidebar');
     const menuIndicator = document.getElementById('menu-indicator');
     const hasSubmenus = document.querySelectorAll('.has-submenu');
@@ -30,24 +28,26 @@ document.addEventListener('DOMContentLoaded', function() {
         centerContent.classList.toggle('collapsed');
 
         if (isCollapsed) {
-
-            hasSubmenus.forEach(item => {
-                item.classList.remove('show');
-            });
-        } else {
-            showSubmenusOnHover();
+            hasSubmenus.forEach(item => item.classList.remove('show'));
         }
     }
 
     menuIndicator.addEventListener('click', toggleSidebar);
-
-    const logoutButton = document.getElementById('logout-button');
-    logoutButton.addEventListener('click', function() {
-        // Aquí puedes agregar la funcionalidad de cierre de sesión
-        alert('Cerrar Sesión');
-    });
-
-
     showSubmenusOnHover();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var accordionToggles = document.querySelectorAll('.accordion-toggle');
+
+    accordionToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            var content = this.nextElementSibling;
+
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    });
+});
