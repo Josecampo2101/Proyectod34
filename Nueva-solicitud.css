@@ -213,7 +213,9 @@ header .logout-container {
     border-radius: 5px;
     transition: border-color 0.3s ease;
     box-sizing: border-box;
+    
 }
+
 
 .Container form .field input:focus,
 .Container form .field input:not(:placeholder-shown),
@@ -261,4 +263,17 @@ input:required:valid {
 
 input:required:invalid {
     border-color: #a00;
+}
+#Enviar {
+    background-color: #009FDA;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#Enviar:hover {
+    background-color: rgb(240, 171, 0); 
 }

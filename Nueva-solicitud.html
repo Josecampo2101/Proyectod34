@@ -75,13 +75,33 @@
                         <label for="email">Email</label>
                     </div>
                     <div class="field select-field">
+                        <label for="Descripción-ayuda">Seleccione tipo de ayuda</label>
                         <select id="tipo-ayuda" name="tipo-ayuda" required>
                             <option value="" disabled selected></option>
-                            <option value="tipo1">Tipo 1</option>
-                            <option value="tipo2">Tipo 2</option>
-                            <option value="tipo3">Tipo 3</option>
+                            <option value="tipo1">Dificultad económica</option>
+                            <option value="tipo2">Honras Funebres</option>
+                            <option value="tipo3">Tratamiento y hospitalización</option>
+                            <option value="tipo4">Limitaciones fisicas</option>
+                            <option value="tipo6">Salud Visual</option>
+                            <option value="tipo6">Mejora de inmueble</option>
+                            <option value="tipo7">Desplazamiento o desastre</option>
+                            <option value="tipo8">Brigadas</option>
+                            <option value="tipo9">Proyectos productivos</option>
+                            <option value="tipo10">Microempresa</option>
+                            <option value="tipo11">Capital de trabajo</option>
                         </select>
-                        <label for="tipo-ayuda">Seleccione tipo de ayuda</label>
+
+                    </div>
+                    <div class="field">
+                        <input type="text" id="Descripción-ayuda" name="Descripción de la ayuda" placeholder=" " required>
+                        <label for="Descripción-ayuda">Descripción ayuda</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="Valor-ayuda" name="Valor-ayuda" placeholder=" " required>
+                        <label for="Valor-ayuda">Valor Ayuda</label>
+                    </div>
+                    <div class="Enviar">
+                        <button id="Enviar">Enviar</button>
                     </div>
                 </div>
             </form>
