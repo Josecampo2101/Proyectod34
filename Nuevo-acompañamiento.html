@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="Nuevo-acompañamiento.css">
+</head>
+<body>
+    <header>
+        <div class="Superior">
+            <img src="./LOGO_IPUC_INVERTIDO_SIN_FONDO_2013.png" alt="Logo IPUC" class="logo">
+            <span>Bienvenido pastor "-----"</span>
+        </div>
+        <div class="logout-container">
+            <button id="logout-button">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <button id="menu-indicator">
+            <img src="./icons8-menú-50.png" alt="Menu Button">
+        </button>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#"><img src="./icons8-casa-24.png" alt="Inicio"> <span>Inicio</span></a>
+                </li>
+                <li class="has-submenu">
+                    <a href="#"><img src="./icons8-archivo-24.png" alt="Solicitud"> <span>Solicitudes</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Nueva Solicitud</a></li>
+                        <li><a href="#">Ver Solicitudes</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#"><img src="./icons8-comunidad-24.png" alt="Acompañamiento"> <span>Acompañamiento</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Nueva Solicitud</a></li>
+                        <li><a href="#">Ver Solicitudes</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#"><img src="./icons8-portafolio-24.png" alt="Portafolios"> <span>Portafolios</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Ver Portafolios</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img src="./icons8-teléfono-desconectado-24.png" alt="Contactos"> <span>Contactos</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="center-content">
+        <div class="Container">
+            <form>
+                <div class="Registro">
+                    <div class="title">Nueva solicitud acompañamiento</div>
+                    <div class="field">
+                        <input type="text" id="congregacion" name="congregacion" placeholder=" " required>
+                        <label for="congregacion">Congregación</label>
+                    </div>
+                    <div class="field select-field">
+                        <label for="seleccionar comité">Seleccione el comité a solicitar</label>
+                        <select id="tipo-ayuda" name="tipo-ayuda" required>
+                            <option value="" disabled selected></option>
+                            <option value="tipo1">Damas Dorcas</option>
+                            <option value="tipo2">Conquistadores Pentecostales</option>
+                            <option value="tipo3">Decom</option>
+                            <option value="tipo4">Escuela Dominical</option>
+                            <option value="tipo6">Artistica</option>
+                            <option value="tipo6">Música</option>
+                            <option value="tipo7">Recursos Educativos</option>
+                            <option value="tipo8">Obra Social</option>
+                            <option value="tipo9">Misiones y evangelismo</option>
+                            <option value="tipo10">Bienestar a la familia</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <input type="date" id="fecha" name="fecha" placeholder=" " required>
+                        <label for="telefono">Fecha de inicio</label>
+                    </div>
+                    <div class="field">
+                        <input type="date" id="fecha" name="fecha" placeholder=" " required>
+                        <label for="telefono">Fecha final</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="Lugar" name="Lugar" placeholder=" " required>
+                        <label for="Lugar">Lugar</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="Descripción-evento" name="Descripción evento" placeholder=" " required>
+                        <label for="Descripción-evento">Descripción del evento </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="Presupuesto" name="Presupuesto" placeholder=" " required>
+                        <label for="Presupuesto">Presupuesto</label>
+                    </div>
+                    <div class="Enviar">
+                        <button id="Enviar">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        ©IPUC Distrito 34
+    </footer>
+
+    <script src="acompañamiento.js"></script>
+</body>
+</html>
