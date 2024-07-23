@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="Nueva-solicitud.css">
+    <title>Prestamos</title>
+    <link rel="stylesheet" href="Prestamos.css">
 </head>
 <body>
     <header>
@@ -57,40 +57,22 @@
         <div class="Container">
             <form>
                 <div class="Registro">
-                    <div class="title">Nueva solicitud</div>
+                    <div class="title">Nuevo prestamo</div>
+                    <div class="field select-field">
+                        <label for="Descripción-ayuda">Seleccione tipo de prestamo</label>
+                        <select id="tipo-ayuda" name="tipo-ayuda" required>
+                            <option value="" disabled selected></option>
+                            <option value="tipo1">Corpentunida</option>
+                            <option value="tipo2">Proyecto de inversión</option>
+                        </select>
+                    </div>
                     <div class="field">
                         <input type="text" id="congregacion" name="congregacion" placeholder=" " required>
                         <label for="congregacion">Congregación</label>
                     </div>
                     <div class="field">
                         <input type="text" id="nombre-completo" name="nombre-completo" placeholder=" " required>
-                        <label for="nombre-completo">Nombre Completo</label>
-                    </div>
-                    <div class="field">
-                        <input type="tel" id="telefono" name="telefono" placeholder=" " required>
-                        <label for="telefono">Teléfono</label>
-                    </div>
-                    <div class="field">
-                        <input type="email" id="email" name="email" placeholder=" " required>
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="field select-field">
-                        <label for="Descripción-ayuda">Seleccione tipo de ayuda</label>
-                        <select id="tipo-ayuda" name="tipo-ayuda" required>
-                            <option value="" disabled selected></option>
-                            <option value="tipo1">Dificultad económica</option>
-                            <option value="tipo2">Honras Funebres</option>
-                            <option value="tipo3">Tratamiento y hospitalización</option>
-                            <option value="tipo4">Limitaciones fisicas</option>
-                            <option value="tipo6">Salud Visual</option>
-                            <option value="tipo6">Mejora de inmueble</option>
-                            <option value="tipo7">Desplazamiento o desastre</option>
-                            <option value="tipo8">Brigadas</option>
-                            <option value="tipo9">Proyectos productivos</option>
-                            <option value="tipo10">Microempresa</option>
-                            <option value="tipo11">Capital de trabajo</option>
-                        </select>
-
+                        <label for="nombre-completo">Nombre Pastor </label>
                     </div>
                     <div class="field">
                         <input type="text" id="Descripción-ayuda" name="Descripción de la ayuda" placeholder=" " required>
@@ -100,6 +82,12 @@
                         <input type="text" id="Valor-ayuda" name="Valor-ayuda" placeholder=" " required>
                         <label for="Valor-ayuda">Valor Ayuda</label>
                     </div>
+
+                    <div class="button">
+                        <span class="text">Subir Archivo</span>
+                        <input type="file" id="file-upload" />
+                    </div>
+
                     <div class="Enviar">
                         <button id="Enviar">Enviar</button>
                     </div>
@@ -112,6 +100,6 @@
         ©IPUC Distrito 34
     </footer>
 
-    <script src="Solicitud.js"></script>
+    <script src="Prestamos.js"></script>
 </body>
 </html>

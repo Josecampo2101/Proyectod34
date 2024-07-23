@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestamos</title>
+    <link rel="stylesheet" href="Prestamos.css">
+</head>
+<body>
+    <header>
+        <div class="Superior">
+            <img src="./LOGO_IPUC_INVERTIDO_SIN_FONDO_2013.png" alt="Logo IPUC" class="logo">
+            <span>Bienvenido pastor "-----"</span>
+        </div>
+        <div class="logout-container">
+            <button id="logout-button">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <button id="menu-indicator">
+            <img src="./icons8-menú-50.png" alt="Menu Button">
+        </button>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#"><img src="./icons8-casa-24.png" alt="Inicio"> <span>Inicio</span></a>
+                </li>
+                <li class="has-submenu">
+                    <a href="#"><img src="./icons8-archivo-24.png" alt="Solicitud"> <span>Solicitudes</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Nueva Solicitud</a></li>
+                        <li><a href="#">Ver Solicitudes</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#"><img src="./icons8-comunidad-24.png" alt="Acompañamiento"> <span>Acompañamiento</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Nueva Solicitud</a></li>
+                        <li><a href="#">Ver Solicitudes</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#"><img src="./icons8-portafolio-24.png" alt="Portafolios"> <span>Portafolios</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Ver Portafolios</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img src="./icons8-teléfono-desconectado-24.png" alt="Contactos"> <span>Contactos</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="center-content">
+        <div class="Container">
+            <form>
+                <div class="Registro">
+                    <div class="title">Nuevo prestamo</div>
+                    <div class="field select-field">
+                        <label for="Descripción-ayuda">Seleccione tipo de prestamo</label>
+                        <select id="tipo-ayuda" name="tipo-ayuda" required>
+                            <option value="" disabled selected></option>
+                            <option value="tipo1">Corpentunida</option>
+                            <option value="tipo2">Proyecto de inversión</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="congregacion" name="congregacion" placeholder=" " required>
+                        <label for="congregacion">Congregación</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="nombre-completo" name="nombre-completo" placeholder=" " required>
+                        <label for="nombre-completo">Nombre Pastor </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="Descripción-ayuda" name="Descripción de la ayuda" placeholder=" " required>
+                        <label for="Descripción-ayuda">Descripción ayuda</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="Valor-ayuda" name="Valor-ayuda" placeholder=" " required>
+                        <label for="Valor-ayuda">Valor Ayuda</label>
+                    </div>
+
+                    <div class="button">
+                        <span class="text">Subir Archivo</span>
+                        <input type="file" id="file-upload" />
+                    </div>
+
+                    <div class="Enviar">
+                        <button id="Enviar">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        ©IPUC Distrito 34
+    </footer>
+
+    <script src="Prestamos.js"></script>
+</body>
+</html>
