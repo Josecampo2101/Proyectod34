@@ -1,0 +1,258 @@
+
+body, html {
+    background-color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+header {
+    background-color: #00338D;
+    color: #FFFFFF;
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    font-family: 'Myriad Pro Italic', Arial, sans-serif;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+header .Superior {
+    display: flex;
+    align-items: center;
+}
+
+header img.logo {
+    margin-right: 20px;
+    width: 50px;
+    height: auto;
+}
+
+header .logout-container {
+    margin-left: auto; 
+}
+
+#logout-button {
+    background-color: rgb(240, 171, 0);
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#logout-button:hover {
+    background-color: #009FDA;
+}
+
+.sidebar {
+    background-color: #cee4ff;
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-weight: bold;
+    overflow-y: auto;
+    padding-top: 60px;
+    transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar button img {
+    width: 30px;
+    height: auto;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+    position: relative;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.sidebar nav ul li a img {
+    margin-right: 10px;
+}
+
+.sidebar nav ul li a span {
+    display: inline;
+    transition: display 0.3s ease;
+}
+
+.sidebar.collapsed nav ul li a span,
+.sidebar nav ul li.collapsed a span {
+    display: none; 
+}
+
+.sidebar nav ul li ul.submenu {
+    display: none;
+    background-color: rgb(0, 159, 218);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+
+.sidebar nav ul li.show ul.submenu {
+    display: block;
+}
+
+.sidebar nav ul li ul.submenu li {
+    margin: 0;
+}
+
+.sidebar nav ul li ul.submenu li a {
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+.sidebar nav ul li ul.submenu li a:hover {
+    background-color: #444444;
+}
+
+
+
+.center-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 260px;
+    transition: padding-left 0.3s ease;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0;
+}
+
+.center-content.collapsed {
+    padding-left: 80px;
+}
+
+.Container {
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 7px;
+    padding: 380px;
+    margin: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    backdrop-filter:blur(10px);
+}
+
+.Container {
+    max-width: 1080px;
+    width: 100%;
+    border-radius: 7px;
+    padding: 390px;
+    margin:px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    backdrop-filter:blur(10px);
+}
+
+.Container {
+    margin-top: 15px;
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fefefe;
+    padding: 150px; 
+    
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(0, 51, 141);
+    position:absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 10px;
+    backdrop-filter:blur(10px);
+}
+
+.box{
+    width: 180px;
+    height: 100px;
+    border-radius:10px;
+    background-color: #3498db;
+    margin: 0px;
+}
+
+.box:hover{
+    background-color: rgb(0, 51, 141);
+}
+
+.sub-title{
+    font-size: 24px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%; 
+    height: 100%; 
+    margin: 0; 
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding:0.1%;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+}
