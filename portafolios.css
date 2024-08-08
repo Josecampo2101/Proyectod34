@@ -132,6 +132,11 @@ header .logout-container {
     display: block;
 }
 
+.sidebar.collapsed nav ul li a span,
+.sidebar nav ul li.collapsed a span {
+    display: none;
+}
+
 .sidebar nav ul li ul.submenu li {
     margin: 0;
 }
@@ -193,6 +198,26 @@ header .logout-container {
     margin-bottom: 10px;
 }
 
+.pdf-item img {
+    width: 150px; 
+    height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.pdf-item img:hover {
+    background-color: rgb(0, 51, 141); /* Cambiar color al pasar el mouse */
+    transform: scale(1.1); /* Aumenta el tamaño para simular desplazamiento hacia el frente */
+}
+.pdf-item span {
+    font-weight: normal; /* Inicialmente normal */
+    transition: font-weight 0.3s ease; /* Transición para suavizar el cambio */
+}
+
+.pdf-item img:hover + span {
+    font-weight: bold; /* Negritas al pasar el mouse */
+}
 footer {
     background-color: #333;
     color: #fff;

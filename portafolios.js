@@ -14,9 +14,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     menuIndicator.addEventListener('click', toggleSidebar);
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Funcionalidad para mostrar los submenús
+    hasSubmenus.forEach(function(menu) {
+        menu.addEventListener('click', function(event) {
+            // Evitar que el enlace principal redirija
+            event.preventDefault();
+
+            // Cerrar otros submenús abiertos
+            hasSubmenus.forEach(item => {
+                if (item !== menu) {
+                    item.classList.remove('show');
+                }
+            });
+
+            // Mostrar u ocultar el submenú actual
+            menu.classList.toggle('show');
+        });
+    });
+
+    // Funcionalidad del acordeón
     var accordionToggles = document.querySelectorAll('.accordion-toggle');
 
     accordionToggles.forEach(function(toggle) {
